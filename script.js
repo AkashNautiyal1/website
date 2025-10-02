@@ -1,3 +1,3 @@
 function showMessage() {
-    alert('Hello from Azure Static Web Apps!');
+    alert('Hello! Thank you for visiting, we will be launching soon!');
 }
