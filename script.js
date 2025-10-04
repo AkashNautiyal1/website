@@ -4,6 +4,23 @@
 // Main application JavaScript
 document.addEventListener('DOMContentLoaded', function() {
   console.log('DOM Content Loaded - Initializing sections');
+  
+  // Check if profile image loaded correctly
+  const profileImg = document.querySelector('.profile-pic');
+  if (profileImg) {
+    // Force reload the image to bypass cache
+    const currentSrc = profileImg.src;
+    profileImg.src = '';
+    setTimeout(() => {
+      profileImg.src = currentSrc + '&t=' + new Date().getTime();
+    }, 10);
+    
+    profileImg.addEventListener('error', function() {
+      console.error('Profile image failed to load');
+      // Fallback to the SVG placeholder if image fails to load
+      this.src = 'images/default-avatar.svg';
+    });
+  }
   // Set first section as active initially
   const firstSection = document.querySelector('.first-section');
   const secondSection = document.querySelector('.second-section');
