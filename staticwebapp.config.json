@@ -1,33 +1,36 @@
 {
+  "platform": {
+    "apiRuntime": "node:16"
+  },
   "routes": [
-    {
-      "route": "/*",
-      "headers": {
-        "Cache-Control": "must-revalidate, max-age=86400"
-      }
-    },
-    {
-      "route": "/images/*",
-      "headers": {
-        "Cache-Control": "must-revalidate, max-age=604800"
-      }
-    },
     {
       "route": "/*.css",
       "headers": {
-        "Cache-Control": "must-revalidate, max-age=86400"
+        "Cache-Control": "public, max-age=86400"
       }
     },
     {
       "route": "/*.js",
       "headers": {
-        "Cache-Control": "must-revalidate, max-age=86400"
+        "Cache-Control": "public, max-age=86400"
+      }
+    },
+    {
+      "route": "/favicon.ico",
+      "headers": {
+        "Cache-Control": "public, max-age=604800"
+      }
+    },
+    {
+      "route": "/*",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
       }
     }
   ],
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/images/*.{png,jpg,gif}", "/*.css", "/*.js"]
+    "exclude": ["/*.{css,js,ico,jpg,png,gif,svg}"]
   },
   "responseOverrides": {
     "404": {
