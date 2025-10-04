@@ -4,7 +4,9 @@
   "description": "Personal website for Akash Nautiyal",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server ."
+    "start": "npx http-server .",
+    "build": "echo 'No build required for static site'",
+    "build:azure": "echo 'Files ready for deployment'"
   },
   "author": "Akash Nautiyal",
   "license": "MIT"
