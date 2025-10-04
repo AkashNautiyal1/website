@@ -261,16 +261,38 @@ footer {
 
 .tech-stack-container {
     width: 100%;
-    padding: 3em 0 1em 0;
+    max-width: 800px;
+    padding: 2em 0;
+    margin: 2em auto 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .tech-stack-container h3 {
     color: #333;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 0;
     margin-bottom: 1em;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    text-transform: none;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.tech-stack-container h3::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    bottom: -5px;
+    width: 120%;
+    height: 2px;
+    background-color: #f05454;
+    transform: scaleX(1);
 }
 
 .tech-stack {
@@ -278,12 +300,21 @@ footer {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
+    line-height: 1.7;
 }
 
 .tech-category {
     color: #0078d4;
     margin: 0.8em 0;
     font-size: 0.9em;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tech-item {
+    color: #0078d4;
+    font-weight: 600;
 }
 
 .social-container {
@@ -326,10 +357,28 @@ footer {
     
     .tech-category {
         font-size: 0.8em;
+        padding: 0 15px;
+        line-height: 1.6;
+        margin: 1em auto;
+        width: 90%;
     }
     
     .social-container {
         gap: 2em;
+    }
+    
+    .tech-stack-container {
+        padding: 2em 10px;
+        margin-top: 3em;
+    }
+    
+    .tech-stack {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .tech-stack-container h3 {
+        font-size: 1.3em;
     }
 }
 
