@@ -64,6 +64,8 @@ body {
 .first-section {
     justify-content: center;
     align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .second-section {
@@ -74,6 +76,8 @@ body {
     align-items: center;
     overflow-y: auto;
     padding-top: 3em;
+    text-align: center;
+    width: 100%;
 }
 
 .content-area {
@@ -81,9 +85,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2em;
-    width: 100%;
+    padding: 1em;
+    width: 90%;
     max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .profile-pic-container {
@@ -281,6 +287,7 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
+    box-sizing: border-box;
 }
 
 .tech-stack-container h3 {
@@ -343,11 +350,35 @@ footer {
 
 /* Responsive styles for mobile devices */
 @media (max-width: 767px) {
-    .content-area {
-        padding: 1em;
+    body, html {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .page-container {
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .page-section {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        right: 0;
     }
     
-    .profile-pic {
+    .content-area {
+        padding: 1em;
+        width: 90%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .profile-pic-container {
         width: 80px;
         height: 80px;
     }
@@ -362,32 +393,40 @@ footer {
     
     .about {
         font-size: 0.95em;
-        padding: 0 1em;
+        padding: 0;
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+        margin: 0 auto 2em auto;
     }
     
     .timeline {
-        width: 95%;
+        width: 90%;
+        max-width: 350px;
     }
     
     .tech-category {
         font-size: 0.8em;
-        padding: 0 15px;
+        padding: 0 10px;
         line-height: 1.6;
         margin: 1em auto;
-        width: 90%;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .social-container {
         gap: 2em;
+        width: 100%;
     }
     
     .tech-stack-container {
-        padding: 2em 10px;
+        padding: 2em 0;
         margin-top: 3em;
+        width: 90%;
     }
     
     .tech-stack {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
     }
     
