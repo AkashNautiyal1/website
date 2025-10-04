@@ -136,13 +136,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }, animDelay);
       });
       
-      // Animate the TechStack section after the timeline animation completes
-      setTimeout(() => {
-        const techStackContainer = document.querySelector('.tech-stack-container');
-        if (techStackContainer) {
-          techStackContainer.classList.add('animate');
+      // Start terminal animation immediately when timeline animation begins
+      const techStackContainer = document.querySelector('.tech-stack-container');
+      if (techStackContainer) {
+        techStackContainer.classList.add('animate');
+        
+        // Start the terminal connection sequence immediately
+        const connectionSequence = document.querySelector('.connection-sequence');
+        if (connectionSequence) {
+          connectionSequence.classList.add('visible');
+          
+          // Animate the connecting lines sequentially but at a pace matching the timeline
+          const connectingLines = document.querySelectorAll('.connecting-line');
+          const connectionStepTime = Math.min(maxDelay / connectingLines.length, 700);
+          
+          connectingLines.forEach((line, index) => {
+            setTimeout(() => {
+              line.classList.add('visible');
+              
+              // After all lines are shown, show the tech content
+              // This will happen around the same time the timeline finishes
+              if (index === connectingLines.length - 1) {
+                setTimeout(() => {
+                  const techContent = document.querySelector('.tech-content');
+                  if (techContent) {
+                    techContent.classList.remove('hidden');
+                    setTimeout(() => {
+                      techContent.classList.add('visible');
+                    }, 100);
+                  }
+                }, connectionStepTime);
+              }
+            }, connectionStepTime * (index + 1));
+          });
         }
-      }, maxDelay + 500); // Add a small buffer after the last point animates
+      }
     }
   }
   

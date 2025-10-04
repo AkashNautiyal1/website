@@ -68,12 +68,39 @@
         </section>
         
         <section class="tech-stack-container">
-            <h3>TechStack</h3>
-            <div class="tech-stack">
-                <div class="tech-category"><span class="tech-item">Cybersecurity</span> | <span class="tech-item">AppSecurity</span> | <span class="tech-item">ThreatModels</span> | <span class="tech-item">Cloud Security</span> | <span class="tech-item">DevOps</span></div>
-                <div class="tech-category"><span class="tech-item">Azure</span> | <span class="tech-item">APIs (Function Apps)</span> | <span class="tech-item">Gen AI</span></div>
-                <div class="tech-category"><span class="tech-item">Copilot Studio (Custom AI Agents)</span></div>
-                <div class="tech-category"><span class="tech-item">Python</span> & <span class="tech-item">PowerShell/Bash</span></div>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control close"></span>
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                    </div>
+                    <div class="terminal-title">akash@skills:~</div>
+                </div>
+                <div class="terminal-body">
+                    <!-- Connection sequence will appear first -->
+                    <div class="connection-sequence">
+                        <div class="command-line"><span class="prompt">akash@skills:~$</span> <span class="command">ssh connect techstack</span></div>
+                        <div class="connecting">
+                            <div class="connecting-line">Connecting to techstack server...</div>
+                            <div class="connecting-line">Authenticating...</div>
+                            <div class="connecting-line">Connection established!</div>
+                            <div class="connecting-line">Loading skill database...</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tech skills will appear after connection -->
+                    <div class="tech-content hidden">
+                        <div class="command-line"><span class="prompt">techstack$</span> <span class="command">ls -la skills/</span></div>
+                        <div class="command-output">
+                            <div class="output-line"><span class="dir-name">security</span><span class="details">cybersecurity, appsec, threat-models, cloud-security, devops</span></div>
+                            <div class="output-line"><span class="dir-name">cloud</span><span class="details">azure, apis, gen-ai</span></div>
+                            <div class="output-line"><span class="dir-name">ai</span><span class="details">copilot-studio, custom-ai-agents</span></div>
+                            <div class="output-line"><span class="dir-name">languages</span><span class="details">python, powershell, bash</span></div>
+                        </div>
+                        <div class="command-line"><span class="prompt">techstack$</span> <span class="command blink">_</span></div>
+                    </div>
+                </div>
             </div>
         </section>
         
