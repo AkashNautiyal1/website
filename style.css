@@ -37,14 +37,28 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.8s ease;
+    overflow: hidden;
 }
 
-.page-section.active {
-    z-index: 1;
+.first-section {
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
 }
 
 .second-section {
+    z-index: 1;
     transform: translateY(100%);
+    padding: 1em;
+}
+
+/* Ensure content doesn't overflow */
+.content-area {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 1em;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .first-section {
@@ -56,8 +70,10 @@ body {
     padding-bottom: 1em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    overflow-y: auto;
+    padding-top: 3em;
 }
 
 .content-area {
@@ -152,12 +168,14 @@ footer {
 
 .timeline-container {
     width: 100%;
-    padding: 3em 0;
+    padding: 2em 0;
+    margin-top: 2em;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .timeline {

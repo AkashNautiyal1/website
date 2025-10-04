@@ -4,9 +4,8 @@
   "description": "Personal website for Akash Nautiyal",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"No tests defined\""
+    "start": "npx http-server ."
   },
   "author": "Akash Nautiyal",
-  "license": "UNLICENSED",
-  "dependencies": {}
+  "license": "MIT"
 }
