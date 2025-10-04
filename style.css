@@ -151,6 +151,14 @@ body {
     height: 45px;
 }
 
+.mouse-outline {
+    stroke: #212529;
+}
+
+.mouse-wheel {
+    fill: #212529;
+}
+
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -161,46 +169,46 @@ body {
 }
 
 h1 {
-    color: #222;
+    color: #212529;
     font-size: 2.2em;
     margin: 0.2em 0 0.1em 0;
 }
 .subtitle {
-    color: #0078d4;
+    color: #212529;
     font-size: 1.1em;
     margin-bottom: 1em;
 }
 
 .handwritten {
     font-family: 'Caveat', cursive;
-    color: #0078d4;
+    color: #ec0707;
     font-size: 1.2em;
     position: relative;
     top: 1px;
 }
 .about {
-    color: #444;
+    color: #212529;
     max-width: 400px;
     margin-bottom: 2em;
 }
 .btn {
     display: inline-block;
     padding: 0.7em 1.5em;
-    background: #0078d4;
+    background: #2E7D32;
     color: #fff;
     border-radius: 24px;
     text-decoration: none;
     font-weight: 500;
     transition: background 0.2s;
-    box-shadow: 0 2px 8px rgba(0,120,212,0.08);
+    box-shadow: 0 2px 8px rgba(46,125,50,0.08);
 }
 .btn:hover {
-    background: #005a9e;
+    background: #1B5E20;
 }
 
 footer {
     text-align: center;
-    color: #aaa;
+    color: #212529;
     font-size: 0.95em;
     padding: 1em 0 0.5em 0;
 }
@@ -231,7 +239,7 @@ footer {
     left: 0;
     right: 0;
     height: 2px;
-    background: #444;
+    background: #212529;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 2.5s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -262,7 +270,7 @@ footer {
     top: -25px;
     font-size: 0.8em;
     font-weight: 500;
-    color: #444;
+    color: #212529;
     width: 100px;
     text-align: center;
     left: 50%;
@@ -273,7 +281,7 @@ footer {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #444;
+    background: #212529;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
     transform: scale(0);
 }
@@ -284,14 +292,14 @@ footer {
 
 .timeline-point:hover .timeline-dot {
     transform: scale(1.5);
-    background: #444;
+    background: #212529;
 }
 
 .timeline-label {
     position: absolute;
     top: 20px;
     font-size: 0.75em;
-    color: #333;
+    color: #212529;
     text-align: center;
     width: 100px;
     left: 50%;
@@ -313,7 +321,7 @@ footer {
 }
 
 .tech-stack-container h3 {
-    color: #000000;
+    color: #212529;
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 1em;
@@ -331,7 +339,7 @@ footer {
     bottom: -5px;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #d9a67a 60%, transparent 100%);
+    background: linear-gradient(90deg, #ec0707 60%, transparent 100%);
     transform: scaleX(1);
     border-radius: 2px;
 }
@@ -347,7 +355,7 @@ footer {
 }
 
 .tech-category {
-    color:#444;
+    color: #212529;
     margin: 0.8em 0;
     font-size: 0.9em;
     width: 90%;
@@ -361,7 +369,7 @@ footer {
 }
 
 .tech-item {
-    color:#444;
+    color: #212529;
     font-weight: 600;
 }
 
@@ -483,12 +491,12 @@ footer {
 }
 
 .social-logo {
-    color: #0078d4;
+    color: #212529;
     transition: color 0.3s ease;
 }
 
 .social-link:hover .social-logo {
-    color: #005a9e;
+    color: #000000;
 }
 
 .email-link {
@@ -499,7 +507,7 @@ footer {
 
 .email-tooltip {
     position: absolute;
-    color: #0078d4;
+    color: #212529;
     font-size: 1em;
     background: rgba(255, 255, 255, 0.9);
     padding: 0.3em 0.7em;
