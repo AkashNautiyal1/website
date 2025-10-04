@@ -4,7 +4,17 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    /* Hide scrollbar for different browsers */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .page-container {
@@ -13,7 +23,17 @@ body {
     height: 100vh;
     overflow-y: auto;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Hide scrollbar for different browsers */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.page-container::-webkit-scrollbar {
+    display: none;
 }
 
 .page-section {
@@ -253,6 +273,43 @@ footer {
     justify-content: center;
     gap: 3em;
     align-items: center;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 767px) {
+    .content-area {
+        padding: 1em;
+    }
+    
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .about {
+        font-size: 0.95em;
+        padding: 0 1em;
+    }
+    
+    .timeline {
+        width: 95%;
+    }
+    
+    .tech-category {
+        font-size: 0.8em;
+    }
+    
+    .social-container {
+        gap: 2em;
+    }
 }
 
 .social-link {

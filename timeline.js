@@ -24,14 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add scroll indicator functionality
   const scrollIndicator = document.querySelector('.scroll-indicator');
   const secondSection = document.querySelector('.second-section');
+  const firstSection = document.querySelector('.first-section');
   
   if (scrollIndicator && secondSection) {
     scrollIndicator.addEventListener('click', function() {
       secondSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     
-    // Add smooth transition on wheel scroll too
-    document.addEventListener('wheel', function() {
+    // Handle both wheel and touch events for better cross-device compatibility
+    const handleScroll = function() {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       
@@ -39,7 +40,41 @@ document.addEventListener('DOMContentLoaded', function() {
       if (scrollPosition > windowHeight * 0.2 && scrollPosition < windowHeight * 0.8) {
         secondSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else if (scrollPosition < windowHeight * 0.2) {
-        document.querySelector('.first-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        firstSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    
+    // Throttle scroll events to improve performance
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (!scrollTimeout) {
+        scrollTimeout = setTimeout(function() {
+          handleScroll();
+          scrollTimeout = null;
+        }, 100);
+      }
+    }, { passive: true });
+    
+    // Add wheel event listener
+    document.addEventListener('wheel', handleScroll, { passive: true });
+    
+    // Add touch event listeners for mobile
+    let touchStartY = 0;
+    document.addEventListener('touchstart', function(e) {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    document.addEventListener('touchend', function(e) {
+      const touchEndY = e.changedTouches[0].clientY;
+      const diff = touchStartY - touchEndY;
+      
+      // Detect swipe direction and scroll to appropriate section
+      if (Math.abs(diff) > 50) { // Minimum swipe distance
+        if (diff > 0) { // Swipe up
+          secondSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else { // Swipe down
+          firstSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     }, { passive: true });
   }
