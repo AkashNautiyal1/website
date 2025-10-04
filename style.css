@@ -231,7 +231,7 @@ footer {
     left: 0;
     right: 0;
     height: 2px;
-    background: #0078d4;
+    background: #444;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 2.5s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -262,7 +262,7 @@ footer {
     top: -25px;
     font-size: 0.8em;
     font-weight: 500;
-    color: #0078d4;
+    color: #444;
     width: 100px;
     text-align: center;
     left: 50%;
@@ -273,7 +273,7 @@ footer {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #0078d4;
+    background: #444;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
     transform: scale(0);
 }
@@ -284,7 +284,7 @@ footer {
 
 .timeline-point:hover .timeline-dot {
     transform: scale(1.5);
-    background: #005a9e;
+    background: #444;
 }
 
 .timeline-label {
@@ -313,7 +313,7 @@ footer {
 }
 
 .tech-stack-container h3 {
-    color: #333;
+    color: #000000;
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 1em;
