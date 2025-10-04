@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Set first section as active initially
   const firstSection = document.querySelector('.first-section');
   const secondSection = document.querySelector('.second-section');
+  const techStackContainer = document.querySelector('.tech-stack-container');
   
   // Check if sections exist
   if (!firstSection || !secondSection) {
@@ -60,6 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
   secondSection.style.transform = 'translateY(100%)';
   firstSection.classList.add('active');
   
+  // Ensure TechStack container is initially hidden
+  if (techStackContainer) {
+    techStackContainer.classList.remove('animate');
+  }
+  
   // Function to handle page transitions
   function goToSection(sectionIndex) {
     if (sectionIndex === currentSection) return;
@@ -70,6 +76,25 @@ document.addEventListener('DOMContentLoaded', function() {
       secondSection.classList.remove('active');
       firstSection.style.transform = 'translateY(0)';
       secondSection.style.transform = 'translateY(100%)';
+      
+      // Reset animations for when we return to second section later
+      const timeline = document.querySelector('.timeline');
+      const techStackContainer = document.querySelector('.tech-stack-container');
+      
+      if (timeline) {
+        timeline.classList.remove('animate');
+        const timelinePoints = document.querySelectorAll('.timeline-point');
+        timelinePoints.forEach(point => {
+          point.style.opacity = '0';
+          const dot = point.querySelector('.timeline-dot');
+          if (dot) dot.classList.remove('animate');
+        });
+      }
+      
+      if (techStackContainer) {
+        techStackContainer.classList.remove('animate');
+      }
+      
       currentSection = 0;
     } else {
       // Go to second section
@@ -94,15 +119,30 @@ document.addEventListener('DOMContentLoaded', function() {
       const timelinePoints = document.querySelectorAll('.timeline-point');
       const lineAnimDuration = 2500; // match the CSS transition duration
       
+      let maxDelay = 0;
+      
       timelinePoints.forEach((point) => {
         const position = parseFloat(point.style.left) || 0;
         const animDelay = (position / 100) * lineAnimDuration;
+        
+        // Keep track of the maximum delay
+        if (animDelay > maxDelay) {
+          maxDelay = animDelay;
+        }
         
         setTimeout(() => {
           point.style.opacity = '1';
           point.querySelector('.timeline-dot').classList.add('animate');
         }, animDelay);
       });
+      
+      // Animate the TechStack section after the timeline animation completes
+      setTimeout(() => {
+        const techStackContainer = document.querySelector('.tech-stack-container');
+        if (techStackContainer) {
+          techStackContainer.classList.add('animate');
+        }
+      }, maxDelay + 500); // Add a small buffer after the last point animates
     }
   }
   

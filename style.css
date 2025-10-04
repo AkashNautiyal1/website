@@ -318,6 +318,14 @@ footer {
     justify-content: center;
     position: relative;
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tech-stack-container.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .tech-stack-container h3 {
