@@ -5,9 +5,30 @@
 document.addEventListener('DOMContentLoaded', function() {
   console.log('DOM Content Loaded - Initializing sections');
   
+  // Fix for iOS devices
+  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    document.documentElement.classList.add('ios-device');
+    
+    // Force repaint on iOS
+    setTimeout(function() {
+      document.body.style.display = 'none';
+      document.body.offsetHeight; // Trigger reflow
+      document.body.style.display = '';
+    }, 10);
+  }
+  
   // Check if profile image loaded correctly
   const profileImg = document.querySelector('.profile-pic');
   if (profileImg) {
+    // Ensure image is fully loaded before displaying
+    profileImg.style.opacity = '0';
+    profileImg.onload = function() {
+      // Once loaded, fade it in
+      profileImg.style.transition = 'opacity 0.3s ease';
+      profileImg.style.opacity = '1';
+      console.log('Profile image loaded successfully');
+    };
+    
     // Force reload the image to bypass cache
     const currentSrc = profileImg.src;
     profileImg.src = '';
@@ -19,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Profile image failed to load');
       // Fallback to the SVG placeholder if image fails to load
       this.src = 'images/default-avatar.svg';
+      this.style.opacity = '1'; // Show the fallback immediately
     });
   }
   // Set first section as active initially
