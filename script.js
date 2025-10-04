@@ -1,6 +1,3 @@
-// Smooth scroll polyfill
-!function(){function e(){var e=window,t=document;if(!("scrollBehavior"in t.documentElement.style)){var o=e.HTMLElement||e.Element,s=468,r={scroll:e.scroll||e.scrollTo,scrollBy:e.scrollBy,elementScroll:o.prototype.scroll||n,scrollIntoView:o.prototype.scrollIntoView},i=e.performance&&e.performance.now?e.performance.now.bind(e.performance):Date.now,c=function(e){return new RegExp(["MSIE ","Trident/","Edge/"].join("|")).test(e)}(e.navigator.userAgent)?1:0;e.scroll=e.scrollTo=function(){if(void 0!==arguments[0]){if(!0===l(arguments[0])){r.scroll.call(e,void 0!==arguments[0].left?arguments[0].left:"object"!=typeof arguments[0]?arguments[0]:e.scrollX||e.pageXOffset,void 0!==arguments[0].top?arguments[0].top:void 0!==arguments[1]?arguments[1]:e.scrollY||e.pageYOffset);return}f.call(e,t.body,void 0!==arguments[0].left?~~arguments[0].left:e.scrollX||e.pageXOffset,void 0!==arguments[0].top?~~arguments[0].top:e.scrollY||e.pageYOffset)}},e.scrollBy=function(){if(void 0!==arguments[0]){if(l(arguments[0])){r.scrollBy.call(e,void 0!==arguments[0].left?arguments[0].left:0,void 0!==arguments[0].top?arguments[0].top:0);return}f.call(e,t.body,~~arguments[0].left+(e.scrollX||e.pageXOffset),~~arguments[0].top+(e.scrollY||e.pageYOffset))}},o.prototype.scroll=o.prototype.scrollTo=function(){if(void 0!==arguments[0]){if(!0===l(arguments[0])){if("number"==typeof arguments[0]&&void 0===arguments[1])throw new SyntaxError("Value could not be converted");r.elementScroll.call(this,void 0!==arguments[0].left?~~arguments[0].left:"object"!=typeof arguments[0]?~~arguments[0]:this.scrollLeft,void 0!==arguments[0].top?~~arguments[0].top:void 0!==arguments[1]?~~arguments[1]:this.scrollTop);return}var e=arguments[0].left,t=arguments[0].top;f.call(this,this,void 0===e?this.scrollLeft:~~e,void 0===t?this.scrollTop:~~t)}},o.prototype.scrollBy=function(){if(void 0!==arguments[0]){if(!0===l(arguments[0])){r.elementScroll.call(this,void 0!==arguments[0].left?~~arguments[0].left+this.scrollLeft:~~arguments[0]+this.scrollLeft,void 0!==arguments[0].top?~~arguments[0].top+this.scrollTop:~~arguments[1]+this.scrollTop);return}this.scroll({left:~~arguments[0].left+this.scrollLeft,top:~~arguments[0].top+this.scrollTop,behavior:arguments[0].behavior})}},o.prototype.scrollIntoView=function(){if(!0===l(arguments[0])){r.scrollIntoView.call(this,void 0===arguments[0]||arguments[0]);return}var o=function(e){for(;e!==t.body&&!1===(s=a(n=e,"Y")&&u(n,"Y"),i=a(n,"X")&&u(n,"X"),s||i);)e=e.parentNode||e.host;var n,o,s,i;return e}(this),n=o.getBoundingClientRect(),s=this.getBoundingClientRect();o!==t.body?(f.call(this,o,o.scrollLeft+s.left-n.left,o.scrollTop+s.top-n.top),"fixed"!==e.getComputedStyle(o).position&&e.scrollBy({left:n.left,top:n.top,behavior:"smooth"})):e.scrollBy({left:s.left,top:s.top,behavior:"smooth"})}}function n(e,t){this.scrollLeft=e,this.scrollTop=t}function l(e){if(null===e||"object"!=typeof e||void 0===e.behavior||"auto"===e.behavior||"instant"===e.behavior)return!0;if("object"==typeof e&&"smooth"===e.behavior)return!1;throw new TypeError("behavior member of ScrollOptions "+e.behavior+" is not a valid value for enumeration ScrollBehavior.")}function a(e,t){return"Y"===t?e.clientHeight+c<e.scrollHeight:"X"===t?e.clientWidth+c<e.scrollWidth:void 0}function u(e,t){var n=window.getComputedStyle(e,null)["overflow"+t];return"auto"===n||"scroll"===n}function f(e,t,o){var s,r,c,l=(i()-(e.startTime||0))/s;l=l>1?1:l,s=468,r=.5*(1-Math.cos(Math.PI*l)),c=e.startX+(e.x-e.startX)*r,l=e.startY+(e.y-e.startY)*r,e.method.call(e.scrollable,c,l),c===e.x&&l===e.y||window.requestAnimationFrame(f.bind(window,e))}function d(o,c,l){var a,u,d,p,m=i();o===t.body?(a=window,d=window.scrollX||window.pageXOffset,p=window.scrollY||window.pageYOffset,u=r.scroll):(a=o,d=o.scrollLeft,p=o.scrollTop,u=n),f({scrollable:a,method:u,startTime:m,startX:d,startY:p,x:c,y:l})}}"scrollBehavior"in document.documentElement.style&&!0!==window.__forceSmoothScrollPolyfill__||(e())}();
-
 // Main application JavaScript
 document.addEventListener('DOMContentLoaded', function() {
   console.log('DOM Content Loaded - Initializing sections');
@@ -20,27 +17,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check if profile image loaded correctly
   const profileImg = document.querySelector('.profile-pic');
   if (profileImg) {
-    // Ensure image is fully loaded before displaying
-    profileImg.style.opacity = '0';
-    profileImg.onload = function() {
-      // Once loaded, fade it in
-      profileImg.style.transition = 'opacity 0.3s ease';
-      profileImg.style.opacity = '1';
-      console.log('Profile image loaded successfully');
-    };
+    // If the image is already loaded (from cache), it's already visible
+    // If it's not, we'll handle any errors
+    if (profileImg.complete) {
+      console.log('Profile image already loaded from cache');
+    } else {
+      // Add load event just for logging
+      profileImg.onload = function() {
+        console.log('Profile image loaded successfully');
+      };
+    }
     
-    // Force reload the image to bypass cache
-    const currentSrc = profileImg.src;
-    profileImg.src = '';
-    setTimeout(() => {
-      profileImg.src = currentSrc + '&t=' + new Date().getTime();
-    }, 10);
-    
+    // Handle errors by showing fallback image
     profileImg.addEventListener('error', function() {
       console.error('Profile image failed to load');
       // Fallback to the SVG placeholder if image fails to load
       this.src = 'images/default-avatar.svg';
-      this.style.opacity = '1'; // Show the fallback immediately
     });
   }
   // Set first section as active initially
