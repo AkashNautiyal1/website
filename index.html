@@ -4,16 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akash Nautiyal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div class="profile-pic"></div>
-        <h1>Akash Nautiyal</h1>
-        <p class="subtitle">Engineer | Explorer | Minimalist</p>
-        <p class="about">Hi, I'm Akash. I love building simple solutions for complex problems, exploring new technologies, and connecting with like-minded people. Welcome to my minimal About Me page!</p>
-        <a href="https://tinyurl.com/akashnautiyal" target="_blank" class="btn">Find me on LinkedIn</a>
-    </main>
+    <div class="page-container">
+        <div class="page-section first-section">
+        <main class="content-area">
+            <div class="profile-pic"></div>
+            <h1>Akash Nautiyal</h1>
+            <p class="subtitle">Engineer | Explorer | Thinker<span class="handwritten">&nbsp;&amp; Doer</span></p>
+            <p class="about">Hi, I'm Akash. I love building simple solutions for complex problems, exploring new technologies, and connecting with like-minded people. Welcome to my minimal About Me page!</p>
+            
+            <div class="scroll-indicator">
+                <svg class="scroll-wheel" xmlns="http://www.w3.org/2000/svg" width="30" height="45" viewBox="0 0 30 45">
+                    <rect class="mouse-outline" x="5" y="5" width="20" height="35" rx="10" ry="10" stroke="#0078d4" stroke-width="2" fill="none" />
+                    <circle class="mouse-wheel" cx="15" cy="15" r="3" fill="#0078d4">
+                        <animate attributeName="cy" from="15" to="25" dur="1.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="1" to="0.3" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+        </main>
+        </div>
+        
+        <div class="page-section second-section">
+        
+        <section class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-point" style="left: 5%;" data-year="2019">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-label">Grad.</span>
+                </div>
+                
+                <div class="timeline-point" style="left: 20%;" data-year="2018">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-label">Wipro</span>
+                </div>
+                
+                <div class="timeline-point" style="left: 40%;" data-year="2020">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-label">EgonZehnder</span>
+                </div>
+                
+                <div class="timeline-point" style="left: 65%;" data-year="2022">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-label">Qualcomm</span>
+                </div>
+                
+                <div class="timeline-point" style="left: 90%;" data-year="2024">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-label">Microsoft</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="tech-stack-container">
+            <h3>TechStack</h3>
+            <div class="tech-stack">
+                <div class="tech-category"><span class="tech-item">Cybersecurity</span> | <span class="tech-item">AppSecurity</span> | <span class="tech-item">ThreatModels</span> | <span class="tech-item">Cloud Security</span> | <span class="tech-item">IAM</span></div>
+                <div class="tech-category"><span class="tech-item">Azure</span> | <span class="tech-item">APIs (Function Apps)</span> | <span class="tech-item">Gen AI</span> | <span class="tech-item">Copilot Studio (Custom AI Agents)</span></div>
+                <div class="tech-category"><span class="tech-item">Python</span> & <span class="tech-item">PowerShell/Bash</span></div>
+            </div>
+        </section>
+        
+        <div class="social-container">
+            <a href="mailto:akash.nautiyal@outlook.com" class="social-link email-link" aria-label="Email me@akash.in">
+                <svg class="social-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
+                    <path fill="currentColor" d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8.7l-8,5.3L4,8.7V6l8,5.3L20,6V8.7z"/>
+                </svg>
+                <span class="email-tooltip">akash.nautiyal@outlook.com</span>
+            </a>
+            
+            <a href="https://tinyurl.com/akashnautiyal" target="_blank" class="social-link linkedin-link" aria-label="LinkedIn Profile">
+                <svg class="social-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
+                    <path fill="currentColor" d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 00.1.24V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                </svg>
+            </a>
+        </div>
+        </div>
+    </div>
+    <script src="timeline.js"></script>
     <footer>
         <p>&copy; 2025 Akash Nautiyal</p>
     </footer>
