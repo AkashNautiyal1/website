@@ -626,34 +626,41 @@ footer {
         position: relative;
     }
     
-    /* Terminal mobile styles */
-    
-    /* Mobile tech stack adjustments */
-    
+    /* Terminal mobile styles - FIXED */
     .terminal-window {
         max-width: 95%;
         font-size: 0.85em;
     }
     
     .terminal-header {
-        padding: 6px 10px;
+        padding: 8px 12px; /* Increased padding */
+        position: relative;
+        min-height: 28px; /* Ensure minimum height for controls */
     }
     
     .terminal-controls {
-        left: 8px;
+        left: 12px; /* Moved slightly right to prevent cutoff */
+        top: 50%;
+        transform: translateY(-50%); /* Center vertically */
+        display: flex;
+        gap: 4px; /* Reduced gap for mobile */
     }
     
     .control {
         width: 10px;
         height: 10px;
+        flex-shrink: 0; /* Prevent shrinking */
+        border-radius: 50%;
     }
     
     .terminal-title {
         font-size: 0.8em;
+        padding-left: 60px; /* Add left padding to avoid overlap with controls */
+        text-align: center;
     }
     
     .terminal-body {
-        padding: 10px 8px;
+        padding: 10px 12px; /* Increased horizontal padding */
         font-size: 0.8em;
         background-size: 100% 18px;
     }
