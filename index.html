@@ -7,9 +7,41 @@
     <meta name="format-detection" content="telephone=no">
     <title>Akash Nautiyal</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- SEO meta tags -->
+    <meta name="description" content="Akash Nautiyal - Engineer, Explorer and Thinker. Experienced professional with background at Microsoft, Qualcomm, EgonZehnder and Wipro.">
+    <meta name="keywords" content="Akash Nautiyal, engineer, Microsoft, Qualcomm, cybersecurity, cloud, AI">
+    <meta name="author" content="Akash Nautiyal">
+    <link rel="canonical" href="https://akashn.in/">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Akash Nautiyal | Engineer | Explorer | Thinker">
+    <meta property="og:description" content="Personal website of Akash Nautiyal - Engineer with expertise in security, cloud, and AI">
+    <meta property="og:image" content="https://akashn.in/images/profile.png">
+    <meta property="og:url" content="https://akashn.in">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Akash Nautiyal | Engineer | Explorer | Thinker">
+    <meta name="twitter:description" content="Personal website of Akash Nautiyal - Engineer with expertise in security, cloud, and AI">
+    <meta name="twitter:image" content="https://akashn.in/images/profile.png">
+    
+    <!-- Critical CSS for above the fold -->
+    <style>
+        body{font-family:'Segoe UI',Arial,sans-serif;background:#f0e0c9;margin:0;padding:0;text-align:center}
+        .page-container{width:100%;height:100vh;overflow:hidden;position:relative}
+        .first-section{z-index:2;align-items:center;justify-content:center}
+        .profile-pic-container{width:120px;height:120px;border-radius:50%;margin-bottom:1.5em;box-shadow:0 3px 10px rgba(0,0,0,0.1);background-color:#e0e0e0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:3px solid white}
+        h1{color:#212529;font-size:2.2em;margin:0.2em 0 0.1em 0}
+    </style>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +49,9 @@
         <div class="page-section first-section">
         <main class="content-area">
             <div class="profile-pic-container">
-                <img src="images/profile.png?v=3" class="profile-pic" alt="Profile Photo" onerror="this.onerror=null;this.src='images/default-avatar.svg';">
+                <img src="images/profile.png?v=3" class="profile-pic" alt="Akash Nautiyal" 
+                     width="120" height="120" loading="lazy" fetchpriority="high"
+                     decoding="async" onerror="this.onerror=null;this.src='images/default-avatar.svg';">
             </div>
             <h1>Akash Nautiyal</h1>
             <p class="subtitle">Engineer | Explorer | Thinker<span class="handwritten">&nbsp;&amp; Doer</span></p>
@@ -121,9 +155,45 @@
         </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    
     <footer>
         <p>&copy; 2025 Akash Nautiyal</p>
+        <p><a href="akashn.in" class="footer-link">akashn.in</a> &mdash; Private</p>
     </footer>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Akash Nautiyal",
+      "url": "https://akashn.in",
+      "image": "https://akashn.in/images/profile.png",
+      "jobTitle": "Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Microsoft"
+      },
+      "alumniOf": [
+        {
+          "@type": "Organization",
+          "name": "Qualcomm"
+        },
+        {
+          "@type": "Organization",
+          "name": "EgonZehnder"
+        },
+        {
+          "@type": "Organization",
+          "name": "Wipro"
+        }
+      ],
+      "sameAs": [
+        "https://linkedin.com/in/akashnautiyal",
+        "https://github.com/AkashNautiyal1"
+      ]
+    }
+    </script>
+    
+    <script src="script.js" defer></script>
 </body>
 </html>
