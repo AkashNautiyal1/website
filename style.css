@@ -287,12 +287,13 @@ footer {
 .tech-stack-container h3::after {
     content: '';
     position: absolute;
-    left: -10%;
+    left: 0%;
     bottom: -5px;
-    width: 120%;
+    width: 100%;
     height: 2px;
-    background-color: #f05454;
+    background: linear-gradient(90deg, #d9a67a 60%, transparent 100%);
     transform: scaleX(1);
+    border-radius: 2px;
 }
 
 .tech-stack {
@@ -304,7 +305,7 @@ footer {
 }
 
 .tech-category {
-    color: #0078d4;
+    color:#444;
     margin: 0.8em 0;
     font-size: 0.9em;
     max-width: 90%;
@@ -313,7 +314,7 @@ footer {
 }
 
 .tech-item {
-    color: #0078d4;
+    color:#444;
     font-weight: 600;
 }
 
