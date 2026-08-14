@@ -12,8 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="images/profile.png">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap&text=Doer" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap&text=Doer" rel="stylesheet"></noscript>
+    <link rel="preload" as="image" href="images/backdrop.png">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet"></noscript>
     
     <!-- SEO meta tags -->
     <meta name="description" content="Akash Nautiyal - Engineer, Explorer and Thinker. Experienced professional with background at Microsoft, Qualcomm, EgonZehnder and Wipro.">
@@ -43,7 +44,7 @@
         h1{color:#212529;font-size:2.2em;margin:0.2em 0 0.1em 0}
     </style>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <div class="page-container">
@@ -57,23 +58,11 @@
             </div>
             <h1>Akash Nautiyal</h1>
             <p class="subtitle">Engineer | Explorer | Thinker<span class="handwritten">&nbsp;&amp; Doer</span></p>
-            <p class="about">Hi, I'm Akash. I love building simple solutions for complex problems, exploring new technologies, and connecting with like-minded people. Welcome to my minimal About Me page!</p>
-            
-            <div class="scroll-indicator">
-                <svg class="scroll-wheel" xmlns="http://www.w3.org/2000/svg" width="30" height="45" viewBox="0 0 30 45">
-                    <rect class="mouse-outline" x="5" y="5" width="20" height="35" rx="10" ry="10" stroke="#212529" stroke-width="2" fill="none" />
-                    <circle class="mouse-wheel" cx="15" cy="15" r="3" fill="#212529">
-                        <animate attributeName="cy" from="15" to="25" dur="1.5s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" from="1" to="0.3" dur="1.5s" repeatCount="indefinite" />
-                    </circle>
-                </svg>
-            </div>
+            <p class="about">Hi, I'm Akash. an SRE & cyber security engineer, I love building simple solutions for complex problems, exploring new technologies, and connecting with like-minded people. Welcome to my minimal About Me page!</p>
         </main>
-        </div>
-        
-        <div class="page-section second-section">
         
         <section class="timeline-container">
+            <p class="section-label">Experiences</p>
             <div class="timeline">
                 <div class="timeline-line"></div>
                 
@@ -105,6 +94,7 @@
         </section>
         
         <section class="tech-stack-container">
+            <p class="section-label">Skills</p>
             <div class="terminal-window">
                 <div class="terminal-header">
                     <div class="terminal-controls">
@@ -127,11 +117,11 @@
                     </div>
                     
                     <!-- Tech skills will appear after connection -->
-                    <div class="tech-content hidden">
+                    <div class="tech-content visible">
                         <div class="command-line"><span class="prompt">techstack$</span> <span class="command">ls -la skills/</span></div>
                         <div class="command-output">
                             <div class="output-line"><span class="dir-name">security</span><span class="details">cybersecurity, appsec, threat-models, cloud-security, devops</span></div>
-                            <div class="output-line"><span class="dir-name">cloud</span><span class="details">azure, apis, gen-ai</span></div>
+                            <div class="output-line"><span class="dir-name">cloud</span><span class="details">azure, aws, apis, gen-ai</span></div>
                             <div class="output-line"><span class="dir-name">ai</span><span class="details">copilot-studio, custom-ai-agents</span></div>
                             <div class="output-line"><span class="dir-name">languages</span><span class="details">python, powershell, bash</span></div>
                         </div>
@@ -196,6 +186,6 @@
     }
     </script>
     
-    <script src="script.js" defer></script>
+    <script src="script.js?v=2" defer></script>
 </body>
 </html>

@@ -39,6 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const firstSection = document.querySelector('.first-section');
   const secondSection = document.querySelector('.second-section');
   const techStackContainer = document.querySelector('.tech-stack-container');
+
+  // The portfolio now opens as one complete view.
+  if (!secondSection) {
+    document.querySelector('.timeline')?.classList.add('animate');
+    document.querySelectorAll('.timeline-point').forEach(point => {
+      point.style.opacity = '1';
+      point.querySelector('.timeline-dot')?.classList.add('animate');
+    });
+    techStackContainer?.classList.add('animate');
+    return;
+  }
   
   // Check if sections exist
   if (!firstSection || !secondSection) {
