@@ -1,4 +1,4 @@
-# A minimal personal
+# A minimal personal website
 
 ## Structure
 
@@ -7,7 +7,7 @@
 - `script.js` - All JavaScript functionality
 - `404.html` - Custom 404 page
 
-## Deployment
+## Deployment [Free of cost]
 
 This website is designed to be deployed on Azure Static Web Apps.
 
