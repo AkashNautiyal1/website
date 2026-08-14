@@ -1,6 +1,4 @@
-# Akash Nautiyal Personal Website
-
-A minimal personal website for Akash Nautiyal.
+# A minimal personal
 
 ## Structure
 
