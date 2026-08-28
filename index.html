@@ -2,30 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Akash Nautiyal</title>
+    <title>Akash Nautiyal | SRE &amp; Cybersecurity Engineer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="images/profile.png">
-    <link rel="preload" as="image" href="images/backdrop.png">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
     
     <!-- SEO meta tags -->
-    <meta name="description" content="Akash Nautiyal - Engineer, Explorer and Thinker. Experienced professional with background at Microsoft, Qualcomm, EgonZehnder and Wipro.">
-    <meta name="keywords" content="Akash Nautiyal, engineer, Microsoft, Qualcomm, cybersecurity, cloud, AI">
+    <meta name="description" content="Akash Nautiyal is an SRE and cybersecurity engineer with experience at Microsoft, Qualcomm, Egon Zehnder, and Wipro.">
+    <meta name="keywords" content="Akash Nautiyal, SRE, cybersecurity engineer, Microsoft, Qualcomm, cloud, AI">
     <meta name="author" content="Akash Nautiyal">
     <link rel="canonical" href="https://akashn.in/">
     
     <!-- Open Graph tags for social sharing -->
     <meta property="og:title" content="Akash Nautiyal | Engineer | Explorer | Thinker">
     <meta property="og:description" content="Personal website of Akash Nautiyal - Engineer with expertise in security, cloud, and AI">
-    <meta property="og:image" content="https://akashn.in/images/profile.png">
     <meta property="og:url" content="https://akashn.in">
     <meta property="og:type" content="website">
     
@@ -33,124 +28,99 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Akash Nautiyal | Engineer | Explorer | Thinker">
     <meta name="twitter:description" content="Personal website of Akash Nautiyal - Engineer with expertise in security, cloud, and AI">
-    <meta name="twitter:image" content="https://akashn.in/images/profile.png">
-    
-    <!-- Critical CSS for above the fold -->
-    <style>
-        body{font-family:'Segoe UI',Arial,sans-serif;background:#f0e0c9;margin:0;padding:0;text-align:center}
-        .page-container{width:100%;height:100vh;overflow:hidden;position:relative}
-        .first-section{z-index:2;align-items:center;justify-content:center}
-        .profile-pic-container{width:120px;height:120px;border-radius:50%;margin-bottom:1.5em;box-shadow:0 3px 10px rgba(0,0,0,0.1);background-color:#e0e0e0;overflow:hidden;display:flex;align-items:center;justify-content:center;border:3px solid white;contain:paint}
-        h1{color:#212529;font-size:2.2em;margin:0.2em 0 0.1em 0}
-    </style>
-    
-    <link rel="stylesheet" href="style.css?v=3">
+
+    <script>
+        try {
+            const savedTheme = localStorage.getItem('theme');
+            document.documentElement.dataset.theme = savedTheme || 'dark';
+        } catch (error) {
+            document.documentElement.dataset.theme = 'dark';
+        }
+    </script>
+    <link rel="stylesheet" href="minimal.css?v=4">
 </head>
 <body>
-    <div class="page-container">
-        <div class="page-section first-section">
-        <main class="content-area">
-            <div class="profile-pic-container">
-                <img src="images/profile.png" class="profile-pic" alt="Akash Nautiyal" 
-                     width="120" height="120" fetchpriority="high"
-                     decoding="async" style="opacity: 1; transition: opacity 0.3s ease"
-                     onerror="this.onerror=null;this.src='images/default-avatar.svg';">
-            </div>
-            <h1>Akash Nautiyal</h1>
-            <p class="subtitle">Engineer | Explorer | Thinker<span class="handwritten">&nbsp;&amp; Doer</span></p>
-            <p class="about">Hi, I'm Akash. an SRE & cyber security engineer, I love building simple solutions for complex problems, exploring new technologies, and connecting with like-minded people. Welcome to my minimal About Me page!</p>
-        </main>
-        
-        <section class="timeline-container">
-            <p class="section-label">Experiences</p>
-            <div class="timeline">
-                <div class="timeline-line"></div>
-                
-                <div class="timeline-point" style="left: 5%;" data-year="2019">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-label">Grad.</span>
+    <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Akash Nautiyal, home">AN<span>.</span></a>
+        <nav aria-label="Primary navigation">
+            <a href="#top">About</a>
+            <a href="#work">Work</a>
+            <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero page" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>SRE &amp; Cybersecurity Engineer</p>
+                <h1 id="hero-title">Akash Nautiyal</h1>
+                <p class="intro">I build reliable systems and practical security solutions for complex environments, with a focus on cloud, automation, and AI.</p>
+                <div class="hero-actions">
+                    <a class="primary-action" href="mailto:akash.nautiyal@outlook.com">Email me</a>
+                    <a class="text-action" href="https://github.com/AkashNautiyal1" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
+                    <a class="text-action" href="https://tinyurl.com/akashnautiyal" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">&#8599;</span></a>
                 </div>
-                
-                <div class="timeline-point" style="left: 20%;" data-year="2018">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-label">Wipro</span>
-                </div>
-                
-                <div class="timeline-point" style="left: 40%;" data-year="2020">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-label">EgonZehnder</span>
-                </div>
-                
-                <div class="timeline-point" style="left: 65%;" data-year="2022">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-label">Qualcomm</span>
-                </div>
-                
-                <div class="timeline-point" style="left: 90%;" data-year="2024">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-label">Microsoft</span>
-                </div>
+                <section class="hero-expertise" aria-labelledby="expertise-title">
+                    <h2 id="expertise-title">Expertise</h2>
+                    <div class="expertise-grid">
+                        <article><span>01</span><h3>Security</h3><p>Cybersecurity, application security, threat modeling, cloud security, and DevSecOps.</p></article>
+                        <article><span>02</span><h3>Cloud</h3><p>Azure, AWS, resilient infrastructure, APIs, observability, and automation.</p></article>
+                        <article><span>03</span><h3>AI &amp; Tools</h3><p>Copilot Studio, custom AI agents, Python, PowerShell, and Bash.</p></article>
+                    </div>
+                </section>
             </div>
         </section>
-        
-        <section class="tech-stack-container">
-            <p class="section-label">Skills</p>
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-controls">
-                        <span class="control close"></span>
-                        <span class="control minimize"></span>
-                        <span class="control maximize"></span>
+
+        <section class="work page section" id="work" aria-labelledby="work-title">
+            <div class="work-intro">
+                <p class="eyebrow">Selected journey</p>
+                <h2 id="work-title">Work</h2>
+            </div>
+
+            <div class="work-content">
+                <section class="experience" aria-labelledby="experience-title">
+                    <div class="section-heading">
+                        <h3 id="experience-title">Experience</h3>
                     </div>
-                    <div class="terminal-title">akash@skills:~</div>
-                </div>
-                <div class="terminal-body">
-                    <!-- Connection sequence will appear first -->
-                    <div class="connection-sequence">
-                        <div class="command-line"><span class="prompt">akash@skills:~$</span> <span class="command">ssh connect techstack</span></div>
-                        <div class="connecting">
-                            <div class="connecting-line">Connecting to techstack server...</div>
-                            <div class="connecting-line">Authenticating...</div>
-                            <div class="connecting-line">Connection established!</div>
-                            <div class="connecting-line">Loading skill database...</div>
-                        </div>
+                    <div class="experience-list">
+                        <details>
+                            <summary><span class="year">2024 - Now</span><strong>Microsoft</strong><span>Site Reliability &amp; Security</span></summary>
+                            <p>Experneices goes here:</p>
+                        </details>
+                        <details>
+                            <summary><span class="year">2022 - 2024</span><strong>Qualcomm</strong><span>Cloud &amp; Security Engineering</span></summary>
+                            <p>Experneices goes here:</p>
+                        </details>
+                        <details>
+                            <summary><span class="year">2020 - 2022</span><strong>Egon Zehnder</strong><span>Infrastructure Engineering</span></summary>
+                            <p>Experneices goes here:</p>
+                        </details>
+                        <details>
+                            <summary><span class="year">2018 - 2020</span><strong>Wipro</strong><span>Engineering</span></summary>
+                            <p>Experneices goes here:</p>
+                        </details>
                     </div>
-                    
-                    <!-- Tech skills will appear after connection -->
-                    <div class="tech-content visible">
-                        <div class="command-line"><span class="prompt">techstack$</span> <span class="command">ls -la skills/</span></div>
-                        <div class="command-output">
-                            <div class="output-line"><span class="dir-name">security</span><span class="details">cybersecurity, appsec, threat-models, cloud-security, devops</span></div>
-                            <div class="output-line"><span class="dir-name">cloud</span><span class="details">azure, aws, apis, gen-ai</span></div>
-                            <div class="output-line"><span class="dir-name">ai</span><span class="details">copilot-studio, custom-ai-agents</span></div>
-                            <div class="output-line"><span class="dir-name">languages</span><span class="details">python, powershell, bash</span></div>
-                        </div>
-                        <div class="command-line"><span class="prompt">techstack$</span> <span class="command blink">_</span></div>
+                </section>
+
+                <section class="random" aria-labelledby="random-title">
+                    <div class="section-heading">
+                        <h3 id="random-title">Random</h3>
                     </div>
-                </div>
+                    <details class="random-details">
+                        <summary>Notes</summary>
+                        <p>content goes here</p>
+                    </details>
+                </section>
             </div>
         </section>
-        
-        <div class="social-container">
-            <a href="mailto:akash.nautiyal@outlook.com" class="social-link email-link" aria-label="Email me@akash.in">
-                <svg class="social-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
-                    <path fill="currentColor" d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8.7l-8,5.3L4,8.7V6l8,5.3L20,6V8.7z"/>
-                </svg>
-                <span class="email-tooltip">akash.nautiyal@outlook.com</span>
-            </a>
-            
-            <a href="https://tinyurl.com/akashnautiyal" target="_blank" class="social-link linkedin-link" aria-label="LinkedIn Profile">
-                <svg class="social-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
-                    <path fill="currentColor" d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 00.1.24V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
-                </svg>
-            </a>
-        </div>
-        </div>
-    </div>
-    
+    </main>
+
     <footer>
-        <p>&copy; 2025 Akash Nautiyal</p>
-        <p><a href="https://akashn.in" class="footer-link">akashn.in</a> &mdash; Private</p>
+        <p>&copy; 2026 Akash Nautiyal</p>
+        <p>Engineer. Explorer. Thinker. Doer.</p>
     </footer>
     
     <script type="application/ld+json">
@@ -159,7 +129,6 @@
       "@type": "Person",
       "name": "Akash Nautiyal",
       "url": "https://akashn.in",
-      "image": "https://akashn.in/images/profile.png",
       "jobTitle": "Engineer",
       "worksFor": {
         "@type": "Organization",
@@ -186,6 +155,6 @@
     }
     </script>
     
-    <script src="script.js?v=2" defer></script>
+    <script src="theme.js?v=2"></script>
 </body>
 </html>
