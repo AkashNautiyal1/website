@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Akash Nautiyal | SRE &amp; Cybersecurity Engineer</title>
+    <title>Akash Nautiyal | Cybersecurity &amp; SRE Engineer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <!-- Performance optimizations -->
@@ -32,12 +32,13 @@
     <script>
         try {
             const savedTheme = localStorage.getItem('theme');
-            document.documentElement.dataset.theme = savedTheme || 'dark';
+            const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.dataset.theme = savedTheme || systemTheme;
         } catch (error) {
             document.documentElement.dataset.theme = 'dark';
         }
     </script>
-    <link rel="stylesheet" href="minimal.css?v=4">
+    <link rel="stylesheet" href="minimal.css?v=3">
 </head>
 <body>
     <header class="site-header">
@@ -57,20 +58,12 @@
             <div class="hero-copy">
                 <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>SRE &amp; Cybersecurity Engineer</p>
                 <h1 id="hero-title">Akash Nautiyal</h1>
-                <p class="intro">I build reliable systems and practical security solutions for complex environments, with a focus on cloud, automation, and AI.</p>
+                <p class="intro">I am cyber security & SRE engineer who build reliable systems and practical security solutions for complex environments, with a focus on cloud, automation, and AI.</p>
                 <div class="hero-actions">
                     <a class="primary-action" href="mailto:akash.nautiyal@outlook.com">Email me</a>
                     <a class="text-action" href="https://github.com/AkashNautiyal1" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
                     <a class="text-action" href="https://tinyurl.com/akashnautiyal" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">&#8599;</span></a>
                 </div>
-                <section class="hero-expertise" aria-labelledby="expertise-title">
-                    <h2 id="expertise-title">Expertise</h2>
-                    <div class="expertise-grid">
-                        <article><span>01</span><h3>Security</h3><p>Cybersecurity, application security, threat modeling, cloud security, and DevSecOps.</p></article>
-                        <article><span>02</span><h3>Cloud</h3><p>Azure, AWS, resilient infrastructure, APIs, observability, and automation.</p></article>
-                        <article><span>03</span><h3>AI &amp; Tools</h3><p>Copilot Studio, custom AI agents, Python, PowerShell, and Bash.</p></article>
-                    </div>
-                </section>
             </div>
         </section>
 
@@ -88,20 +81,31 @@
                     <div class="experience-list">
                         <details>
                             <summary><span class="year">2024 - Now</span><strong>Microsoft</strong><span>Site Reliability &amp; Security</span></summary>
-                            <p>Experneices goes here:</p>
+                            <p>experiences goes here:</p>
                         </details>
                         <details>
                             <summary><span class="year">2022 - 2024</span><strong>Qualcomm</strong><span>Cloud &amp; Security Engineering</span></summary>
-                            <p>Experneices goes here:</p>
+                            <p>experiences goes here:</p>
                         </details>
                         <details>
                             <summary><span class="year">2020 - 2022</span><strong>Egon Zehnder</strong><span>Infrastructure Engineering</span></summary>
-                            <p>Experneices goes here:</p>
+                            <p>experiences goes here:</p>
                         </details>
                         <details>
                             <summary><span class="year">2018 - 2020</span><strong>Wipro</strong><span>Engineering</span></summary>
-                            <p>Experneices goes here:</p>
+                            <p>experiences goes here:</p>
                         </details>
+                    </div>
+                </section>
+
+                <section class="expertise" aria-labelledby="expertise-title">
+                    <div class="section-heading">
+                        <h3 id="expertise-title">Expertise</h3>
+                    </div>
+                    <div class="expertise-grid">
+                        <article><span>01</span><h4>Security</h4><p>Cybersecurity, application security, threat modeling, cloud security, and DevSecOps.</p></article>
+                        <article><span>02</span><h4>Cloud</h4><p>Azure, Terraform IaC, AWS, APIs, observability, and automation.</p></article>
+                        <article><span>03</span><h4>AI &amp; Tools</h4><p>Copilot Studio, Python, PowerShell, custom AI agents, and Bash.</p></article>
                     </div>
                 </section>
 
@@ -155,6 +159,6 @@
     }
     </script>
     
-    <script src="theme.js?v=2"></script>
+    <script src="theme.js"></script>
 </body>
 </html>
