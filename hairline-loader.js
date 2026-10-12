@@ -1,4 +1,5 @@
 const hairlineUrl = 'https://cdn.jsdelivr.net/npm/@lucasmarkes/hairline@0.5.0/+esm';
+const introDuration = 4500;
 const figureNames = [
     'basket',
     'branches',
@@ -41,15 +42,24 @@ let figure;
 
 document.addEventListener('hairline:intro:end', () => figure?.destroy(), { once: true });
 
+function endIntro() {
+    root.classList.remove('hairline-intro');
+    document.dispatchEvent(new Event('hairline:intro:end'));
+}
+
 try {
     const hairline = await import(hairlineUrl);
 
     if (root.classList.contains('hairline-intro') && figureElement) {
         const name = figureNames[Math.floor(Math.random() * figureNames.length)];
-        figure = hairline[name](figureElement, { play: true, theme: 'auto' });
+        figure = hairline[name](figureElement, {
+            intensity: 0.9,
+            play: true,
+            theme: 'auto',
+        });
+        window.setTimeout(endIntro, introDuration);
     }
 } catch (error) {
     console.error('Unable to load the Hairline loading illustration.', error);
-    root.classList.remove('hairline-intro');
-    document.dispatchEvent(new Event('hairline:intro:end'));
+    endIntro();
 }

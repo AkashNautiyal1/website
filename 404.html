@@ -15,10 +15,13 @@
             document.documentElement.dataset.theme = 'dark';
         }
         document.documentElement.classList.add('hairline-intro');
-        window.setTimeout(() => {
+        const hairlineFallback = window.setTimeout(() => {
             document.documentElement.classList.remove('hairline-intro');
             document.dispatchEvent(new Event('hairline:intro:end'));
-        }, 4000);
+        }, 8000);
+        document.addEventListener('hairline:intro:end', () => {
+            window.clearTimeout(hairlineFallback);
+        }, { once: true });
     </script>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@lucasmarkes/hairline@0.5.0/+esm" crossorigin>
