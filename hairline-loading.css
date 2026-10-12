@@ -1,0 +1,14 @@
+html.hairline-intro, html.hairline-intro body { overflow: hidden; }
+html.hairline-intro body > :not(.hairline-loading-screen) { visibility: hidden; }
+.hairline-loading-screen {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    place-items: center;
+    background: var(--paper);
+}
+html.hairline-intro .hairline-loading-screen { display: grid; }
+.hairline-loading-figure { width: min(240px, 62vw); }
+.hairline-credit { font-size: 0.66rem; }
+.hairline-credit a { text-decoration: underline; text-underline-offset: 2px; }

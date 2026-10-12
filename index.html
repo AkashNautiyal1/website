@@ -37,10 +37,21 @@
         } catch (error) {
             document.documentElement.dataset.theme = 'dark';
         }
+        document.documentElement.classList.add('hairline-intro');
+        window.setTimeout(() => {
+            document.documentElement.classList.remove('hairline-intro');
+            document.dispatchEvent(new Event('hairline:intro:end'));
+        }, 4000);
     </script>
-    <link rel="stylesheet" href="minimal.css?v=3">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@lucasmarkes/hairline@0.5.0/+esm" crossorigin>
+    <link rel="stylesheet" href="hairline-loading.css">
+    <link rel="stylesheet" href="minimal.css?v=4">
 </head>
 <body>
+    <div class="hairline-loading-screen" role="status" aria-label="Loading website">
+        <div class="hairline-loading-figure" aria-hidden="true" inert></div>
+    </div>
     <header class="site-header">
         <a class="wordmark" href="#top" aria-label="Akash Nautiyal, home">AN<span>.</span></a>
         <nav aria-label="Primary navigation">
@@ -122,6 +133,7 @@
     <footer>
         <p>&copy; 2026 Akash Nautiyal</p>
         <p>Engineer. Explorer. Thinker. Doer.</p>
+        <p class="hairline-credit">Illustrations by <a href="https://github.com/lucasmarkes/hairline" target="_blank" rel="noopener noreferrer">Lucas Markes / Hairline</a></p>
     </footer>
     
     <script type="application/ld+json">
@@ -157,5 +169,6 @@
     </script>
     
     <script src="theme.js"></script>
+    <script type="module" src="hairline-loader.js"></script>
 </body>
 </html>
